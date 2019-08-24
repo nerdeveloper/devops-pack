@@ -44,7 +44,45 @@ unzip terraform_${TERRAFROM_VERSION}_linux_amd64.zip && \
 mv terraform /usr/bin 
 echo -e " ${BLUE} Terraform has been installed! \e[0m "
 
+
 echo -e " ${BLUE} Installing Google Cloud CLI"
 sleep 2
-curl https://sdk.cloud.google.com | bash | exec -l $SHELL
+
+# Create an environment variable for the correct distribution
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+
+# Add the Cloud SDK distribution URI as a package source
+echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+# Import the Google Cloud Platform public key
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+# Update the package list and install the Cloud SDK
+sudo apt-get update && sudo apt-get install google-cloud-sdk
+
 echo -e " ${BLUE} Google Cloud CLI has been installed! \e[0m "
+
+
+echo -e " ${BLUE} Installing Microsoft Azure CLI"
+sleep 2
+
+# Get packages needed for the install process:
+sudo apt-get update
+sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
+
+# Download and install the Microsoft signing key:
+curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+    gpg --dearmor | \
+    sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+
+
+# Add the Azure CLI software repository
+AZ_REPO=$(lsb_release -cs)
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+    sudo tee /etc/apt/sources.list.d/azure-cli.list
+
+# Update repository information and install the azure-cli package:
+sudo apt-get update
+sudo apt-get install azure-cli
+
+echo -e " ${BLUE} Microsoft Azure CLI has been installed! \e[0m "
