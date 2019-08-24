@@ -9,6 +9,7 @@ TERRAFROM_VERSION=0.12.7
 KOPS_VERSION=1.13.0
 GO_VERSION=1.12.9
 NODEJS_VERSION='10.x'
+PACKER_VERSION=1.4.3
 
 
 echo -e " ${BLUE} Updating Ubuntu Packages \[0m"
@@ -165,3 +166,14 @@ curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION} -o nodesource_setup.
 sudo bash nodesource_setup.sh && \
 sudo apt-get install nodejs -y
 echo -e " ${BLUE} Nodejs has been installed! \e[0m"
+
+#Installations for Packer
+echo -e " ${BLUE} Installing Packer"
+sleep 2
+cd /tmp && \
+wget https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip
+unzip packer_${PACKER_VERSION}_linux_amd64.zip
+sudo mv packer /usr/local/bin
+
+
+echo -e " ${BLUE} Packer has been installed! \e[0m"
