@@ -17,6 +17,7 @@ Backend, Cloud, DevOps, related projects can be difficult to setup. Following a 
 - Docker
 - Kubernetes(Kops)
 - Ansible
+- Packer
 - Terraform
 - DotNetCore
 - Nodejs
