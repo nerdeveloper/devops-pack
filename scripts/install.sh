@@ -32,14 +32,14 @@ echo -e " ${PURPLE} Python and Pip has been installed!"
 
 echo -e " ${BLUE} Installing AWS CLI"
 sleep 2
-pip3 install awscli  --user
+pip3 install awscli --upgrade --user
 echo -e " ${BLUE} AWS CLI has been installed! "
 
 
 echo -e " ${BLUE} Installing Terraform"
 sleep 2
 cd /tmp && \
-wget https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip > terraform.zip && \
-unzip terraform.zip && \
-mv terraform /usr/bin && cd 
+wget https://releases.hashicorp.com/terraform/${TERRAFROM_VERSION}/terraform_${TERRAFROM_VERSION}_linux_amd64.zip  && \
+unzip terraform_${TERRAFROM_VERSION}_linux_amd64.zip && \
+mv terraform /usr/bin 
 echo -e " ${BLUE} Terraform has been installed! "
