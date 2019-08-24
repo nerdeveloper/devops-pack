@@ -8,9 +8,8 @@ PURPLE='\033[0;35m'
 TERRAFROM_VERSION=0.12.7
 DOCKER_VERSION=19.0.0
 KOPS_VERSION=2.0.1
-ANSIBLE_VERSION=5.x
 GO_VERSION=1.12.9
-ASPDOTNETCORE_VERSION=3.4
+
 
 echo -e " ${BLUE} Updating Ubuntu Packages \[0m"
 sleep 1
@@ -120,4 +119,27 @@ sudo apt-get update
 sudo apt-get install dotnet-sdk-2.2
 echo -e " ${BLUE} DOTNETCORE has been installed! \e[0m"
 
+
+#Installations for DOCKER
+echo -e " ${BLUE} Installing DOCKER"
+sleep 2
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common -y
+    
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    
+    sudo apt-key fingerprint 0EBFCD88
+    
+    sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu
+    $(lsb_release -cs) \
+    stable"
+    sudo apt-get update
+    sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+echo -e " ${BLUE} DOTNETCORE has been installed! \e[0m"
 
