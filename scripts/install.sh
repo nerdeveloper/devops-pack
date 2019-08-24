@@ -9,7 +9,6 @@ TERRAFROM_VERSION=0.12.7
 DOCKER_VERSION=19.0.0
 KOPS_VERSION=2.0.1
 ANSIBLE_VERSION=5.x
-AWS-CLI_VERSION=0.1.2
 AZURE-CLI_VERSION=2.9.0
 GOOGLECLOUD-CLI_VERSION=2.x
 GO_VERSION=2.2
@@ -21,15 +20,24 @@ sleep 1
 apt-get update
 
 echo -e " ${PURPLE} Install zip and unzip"
-sleep 2
+sleep 1
 apt-get install zip && apt-get install unzip
 
 echo -e " ${PURPLE} Install Python and Pip"
-sleep 2
+sleep 1
 apt-get install python3 && apt-get install python3-pip
 echo -e " ${PURPLE} Python and Pip has been installed!"
 
+
+
+echo -e " ${BLUE} Installing AWS CLI"
+sleep 2
+pip3 install awscli --upgrade --user
+echo -e " ${BLUE} AWS CLI has been installed! "
+
+
 echo -e " ${BLUE} Installing Terraform"
+sleep 2
 cd /tmp && \
 wget https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip > terraform.zip && \
 unzip terraform.zip && \
