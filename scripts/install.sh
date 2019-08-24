@@ -88,7 +88,7 @@ sudo mv go/ /usr/local/go
 export GOROOT=/usr/local/go && \
 export GOPATH=$HOME/goprojects && \
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-source scripts/install.sh
+source ./scripts/install.sh
 
 echo -e " ${BLUE} Go has been installed! \e[0m"
 
