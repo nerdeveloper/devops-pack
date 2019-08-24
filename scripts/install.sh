@@ -19,21 +19,23 @@ echo -e " ${BLUE} Updating Ubuntu Packages \[0m"
 sleep 1
 sudo apt-get update -y 
 
-echo -e " ${PURPLE} Install zip and unzip"
+echo -e " ${PURPLE} Installing zip and unzip"
 sleep 1
 sudo apt-get install zip -y && sudo apt-get install unzip -y
+echo -e " ${PURPLE}  zip and unzip has been installed!"
 
-echo -e " ${PURPLE} Install Python and Pip"
+echo -e " ${PURPLE} Installing Python and Pip"
 sleep 1
 sudo apt-get install python3 -y && sudo apt-get install python3-pip -y
-echo -e " ${PURPLE} Python and Pip has been installed!"
+echo -e " ${PURPLE} Python and Pip has been installed! \e[0m "
 
 
 
-echo -e " ${BLUE} Installing AWS CLI"
+echo -e " ${BLUE} Installing AWS CLI \e[0m "
 sleep 2
-pip3 install awscli --upgrade --user
-echo -e " ${BLUE} AWS CLI has been installed! "
+sudo pip3 install --upgrade
+sudo pip3 install awscli --upgrade --user
+echo -e " ${BLUE} AWS CLI has been installed! \e[0m "
 
 
 echo -e " ${BLUE} Installing Terraform"
@@ -42,4 +44,10 @@ cd /tmp && \
 wget https://releases.hashicorp.com/terraform/${TERRAFROM_VERSION}/terraform_${TERRAFROM_VERSION}_linux_amd64.zip  && \
 unzip terraform_${TERRAFROM_VERSION}_linux_amd64.zip && \
 mv terraform /usr/bin 
-echo -e " ${BLUE} Terraform has been installed! "
+echo -e " ${BLUE} Terraform has been installed! \e[0m "
+
+echo -e " ${BLUE} Installing Google Cloud CLI"
+sleep 2
+sudo pip3 install --upgrade
+sudo pip3 install gcloud --upgrade --user
+echo -e " ${BLUE} AWS CLI has been installed! \e[0m "
