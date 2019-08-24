@@ -106,4 +106,18 @@ sudo apt-add-repository ppa:ansible/ansible -y  && \
 sudo apt-get update -y && \
 sudo apt-get install ansible -y 
 
-echo -e " ${BLUE} Terraform has been installed! \e[0m"
+echo -e " ${BLUE} Ansible has been installed! \e[0m"
+
+
+#Installations for DOTNETCORE
+echo -e " ${BLUE} Installing DOTNETCORE"
+sleep 2
+wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install dotnet-sdk-2.2
+echo -e " ${BLUE} DOTNETCORE has been installed! \e[0m"
+
+
