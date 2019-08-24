@@ -66,7 +66,7 @@ sleep 2
 
 # Get packages needed for the install process:
 sudo apt-get update -y
-sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
+sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg -y 
 
 # Download and install the Microsoft signing key:
 curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
