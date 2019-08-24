@@ -81,7 +81,7 @@ echo -e " ${PURPLE} Python and Pip has been installed! \e[0m "
 echo -e " ${BLUE} Installing Go "
 sleep 2
 sudo apt-get update -y 
-apt-get install golang-go
+apt-get install golang-go -y 
 echo -e " ${BLUE} Go has been installed! \e[0m"
 
 
