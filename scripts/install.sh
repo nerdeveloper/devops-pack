@@ -13,7 +13,6 @@ AZURE-CLI_VERSION=2.9.0
 GOOGLECLOUD-CLI_VERSION=2.x
 GO_VERSION=2.2
 ASPDOTNETCORE_VERSION=3.4
-NODEJS_VERSION=
 
 echo -e " ${BLUE} Updating Ubuntu Packages \[0m"
 sleep 1
@@ -33,7 +32,7 @@ echo -e " ${PURPLE} Python and Pip has been installed! \e[0m "
 
 echo -e " ${BLUE} Installing AWS CLI \e[0m "
 sleep 2
-sudo apt-get install awscli
+sudo apt-get install awscli -y
 echo -e " ${BLUE} AWS CLI has been installed! \e[0m "
 
 
