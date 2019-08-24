@@ -24,11 +24,10 @@ echo -e " ${PURPLE} Install zip and unzip"
 sleep 2
 apt-get install zip && apt-get install unzip
 
-echo -e " ${PURPLE} Install Python Pip"
+echo -e " ${PURPLE} Install Python and Pip"
 sleep 2
-apt-get install python-pip
-echo -e " ${PURPLE} Python Pip has been installed!"
-
+apt-get install python3 && apt-get install python3-pip
+echo -e " ${PURPLE} Python and Pip has been installed!"
 
 echo -e " ${BLUE} Installing Terraform"
 cd /tmp && \
