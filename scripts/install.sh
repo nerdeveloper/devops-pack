@@ -85,8 +85,8 @@ wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && \
 sudo tar -xvf go${GO_VERSION}.linux-amd64.tar.gz
 sudo mv go/ /usr/local/go
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/goprojects
+export GOROOT=/usr/local/go && \
+export GOPATH=$HOME/goprojects && \
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 echo -e " ${BLUE} Go has been installed! \e[0m"
