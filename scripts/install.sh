@@ -87,7 +87,7 @@ sudo mv go/ /usr/local/go
 
 echo  GOROOT=/usr/local/go >> /home/vagrant/.bashrc && \
 echo  GOPATH=/home/vagrant/goprojects >> /home/vagrant/.bashrc && \
-echo PATH=$GOPATH/bin:$GOROOT/bin:$PATH >> /home/vagrant/.bashrc
+echo  PATH=/home/vagrant/goprojects/bin:/usr/local/go/bin:/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin >> /home/vagrant/.bashrc
 source /home/vagrant/.bashrc
 
 echo -e " ${BLUE} Go has been installed! \e[0m"
