@@ -33,8 +33,7 @@ echo -e " ${PURPLE} Python and Pip has been installed! \e[0m "
 
 echo -e " ${BLUE} Installing AWS CLI \e[0m "
 sleep 2
-sudo pip3 install --upgrade
-sudo pip3 install awscli --upgrade --user
+sudo apt-get install awscli
 echo -e " ${BLUE} AWS CLI has been installed! \e[0m "
 
 
@@ -48,6 +47,5 @@ echo -e " ${BLUE} Terraform has been installed! \e[0m "
 
 echo -e " ${BLUE} Installing Google Cloud CLI"
 sleep 2
-sudo pip3 install --upgrade
-sudo pip3 install gcloud --upgrade --user
-echo -e " ${BLUE} AWS CLI has been installed! \e[0m "
+curl https://sdk.cloud.google.com | bash | exec -l $SHELL
+echo -e " ${BLUE} Google Cloud CLI has been installed! \e[0m "
