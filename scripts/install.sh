@@ -17,15 +17,15 @@ NODEJS_VERSION=
 
 echo -e " ${BLUE} Updating Ubuntu Packages \[0m"
 sleep 1
-apt-get update
+sudo apt-get update
 
 echo -e " ${PURPLE} Install zip and unzip"
 sleep 1
-apt-get install zip && apt-get install unzip
+sudo apt-get install zip && sudo apt-get install unzip
 
 echo -e " ${PURPLE} Install Python and Pip"
 sleep 1
-apt-get install python3 && apt-get install python3-pip
+sudo apt-get install python3 && sudo apt-get install python3-pip
 echo -e " ${PURPLE} Python and Pip has been installed!"
 
 
