@@ -41,7 +41,6 @@ You can find [instructions on how to install `homebrew` here](https://www.howtog
 
 ## CLI(Screenshot)
 
-  <img src="https://github.com/nerdeveloper/stacks/blob/master/images/shot.png" alt="Lighthouse perf" title="Screenshot of Stacks" width="500" >
 
 ### Make me feel :heart: and appreciated
 
@@ -51,4 +50,4 @@ You can also follow me on **[Twitter](https://twitter.com/_nerdeveloper)**
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE) for more information..
+The MIT License (MIT). Please see [License File](LICENSE) for more information
