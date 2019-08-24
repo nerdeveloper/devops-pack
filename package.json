@@ -1,0 +1,12 @@
+{
+  "name": "devops-pack",
+  "version": "1.0.0",
+  "description": "An All-in-one setup pack for Backend, Cloud, etc related projects for development and testing. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Obinna Odirionye",
+  "license": "ISC"
+}
