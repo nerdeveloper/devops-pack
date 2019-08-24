@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
     # Provider Settings
     devpack.vm.provider "virtualbox" do |vb|
-      vb.memory = "512"
+      vb.memory = "1024"
     end
 
     # Provision Settings
