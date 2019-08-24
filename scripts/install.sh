@@ -83,7 +83,12 @@ sleep 2
 cd /tmp && \
 wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && \
 sudo tar -xvf go${GO_VERSION}.linux-amd64.tar.gz
-mv go /usr/bin
+sudo mv go/ /usr/local/go
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/goprojects
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
 echo -e " ${BLUE} Go has been installed! \e[0m"
 
 
@@ -115,8 +120,8 @@ wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-pr
 sudo dpkg -i packages-microsoft-prod.deb
 
 sudo apt-get install apt-transport-https
-sudo apt-get update
-sudo apt-get install dotnet-sdk-2.2
+sudo apt-get update -y 
+sudo apt-get install dotnet-sdk-2.2 -y 
 echo -e " ${BLUE} Dotnetcore has been installed! \e[0m"
 
 
