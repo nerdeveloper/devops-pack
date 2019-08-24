@@ -100,10 +100,10 @@ echo -e " ${BLUE} Terraform has been installed! \e[0m"
 #Installations for Ansible
 echo -e " ${BLUE} Installing Ansible"
 sleep 2
-sudo apt update
-sudo apt install software-properties-common
-sudo apt-add-repository ppa:ansible/ansible && \
-sudo apt update && \
-sudo apt install ansible
+sudo apt-get update -y
+sudo apt-get install software-properties-common -y 
+sudo apt-add-repository ppa:ansible/ansible -y  && \
+sudo apt update -y && \
+sudo apt install ansible -y 
 
 echo -e " ${BLUE} Terraform has been installed! \e[0m"
