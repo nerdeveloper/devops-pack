@@ -6,7 +6,7 @@ PURPLE='\033[0;35m'
 
 #version
 TERRAFROM_VERSION=0.12.7
-KOPS_VERSION=2.0.1
+KOPS_VERSION=1.13.0
 GO_VERSION=1.12.9
 
 
@@ -108,7 +108,7 @@ echo -e " ${BLUE} Ansible has been installed! \e[0m"
 
 
 #Installations for Dotnetcore
-echo -e " ${BLUE} Installing DOTNETCORE"
+echo -e " ${BLUE} Installing Dotnetcore"
 sleep 2
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
@@ -116,7 +116,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install dotnet-sdk-2.2
-echo -e " ${BLUE} DOTNETCORE has been installed! \e[0m"
+echo -e " ${BLUE} Dotnetcore has been installed! \e[0m"
 
 
 #Installations for Docker
@@ -141,6 +141,13 @@ sudo apt-get install \
     sudo apt-get update
     sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
-echo -e " ${BLUE} DOTNETCORE has been installed! \e[0m"
+echo -e " ${BLUE} Docker has been installed! \e[0m"
 
+#Installations for Kubernetes(Kops)
+echo -e " ${BLUE} Installing Kubernetes(Kops)"
+sleep 2
+curl -LO https://github.com/kubernetes/kops/releases/download/${KOPS_VERSION}/kops-linux-amd64
+chmod +x kops-linux-amd64
+sudo mv ./kops-linux-amd64 /usr/bin/kops
+echo -e " ${BLUE} Kubernetes(Kops)has been installed! \e[0m"
 
