@@ -29,14 +29,15 @@ echo -e " ${PURPLE} Python and Pip has been installed! \e[0m "
 
 }
 
-runAWS() {
+function runAWS() {
 # Installation for AWS CLI
 echo -e " ${BLUE} Installing AWS CLI \e[0m "
 sleep 2
 sudo apt-get install awscli -y
 echo -e " ${BLUE} AWS CLI has been installed! \e[0m "
 }
-runGoogleCloud(){
+
+function runGoogleCloud(){
 #Installations for Google Clouc SDK
 echo -e " ${BLUE} Installing Google Cloud SDK"
 sleep 2
@@ -56,7 +57,7 @@ sudo apt-get update -y && sudo apt-get install google-cloud-sdk -y
 echo -e " ${BLUE} Google Cloud CLI has been installed! \e[0m "
 }
 
-runAzure() {
+function runAzure() {
 #Installations for Microsft Azure CLI
 echo -e " ${BLUE} Installing Microsoft Azure CLI"
 sleep 2
