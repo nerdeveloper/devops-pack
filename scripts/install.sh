@@ -19,11 +19,16 @@ NODEJS_VERSION=
 echo -e " ${BLUE} Updating Ubuntu Packages \[0m"
 sleep 1
 apt-get update
-apt-apt --dist update
 
 echo -e " ${PURPLE} Install zip and unzip"
 sleep 2
 apt-get install zip && apt-get install unzip
+
+echo -e " ${PURPLE} Install Python Pip"
+sleep 2
+apt-get install python-pip
+echo -e " ${PURPLE} Python Pip has been installed!"
+
 
 echo -e " ${BLUE} Installing Terraform"
 cd /tmp && \
