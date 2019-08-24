@@ -97,3 +97,13 @@ unzip terraform_${TERRAFROM_VERSION}_linux_amd64.zip && \
 mv terraform /usr/bin 
 echo -e " ${BLUE} Terraform has been installed! \e[0m"
 
+#Installations for Ansible
+echo -e " ${BLUE} Installing Ansible"
+sleep 2
+sudo apt update
+sudo apt install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible && \
+sudo apt update && \
+sudo apt install ansible
+
+echo -e " ${BLUE} Terraform has been installed! \e[0m"
