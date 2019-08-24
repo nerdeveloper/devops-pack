@@ -103,7 +103,7 @@ sleep 2
 sudo apt-get update -y
 sudo apt-get install software-properties-common -y 
 sudo apt-add-repository ppa:ansible/ansible -y  && \
-sudo apt update -y && \
-sudo apt install ansible -y 
+sudo apt-get update -y && \
+sudo apt-get install ansible -y 
 
 echo -e " ${BLUE} Terraform has been installed! \e[0m"
