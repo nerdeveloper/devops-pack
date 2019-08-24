@@ -123,6 +123,7 @@ echo -e " ${BLUE} DOTNETCORE has been installed! \e[0m"
 #Installations for DOCKER
 echo -e " ${BLUE} Installing DOCKER"
 sleep 2
+usermod -G docker ubuntu
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
