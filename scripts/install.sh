@@ -107,7 +107,7 @@ sudo apt-get install ansible -y
 echo -e " ${BLUE} Ansible has been installed! \e[0m"
 
 
-#Installations for DOTNETCORE
+#Installations for Dotnetcore
 echo -e " ${BLUE} Installing DOTNETCORE"
 sleep 2
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -119,7 +119,7 @@ sudo apt-get install dotnet-sdk-2.2
 echo -e " ${BLUE} DOTNETCORE has been installed! \e[0m"
 
 
-#Installations for DOCKER
+#Installations for Docker
 echo -e " ${BLUE} Installing DOCKER"
 sleep 2
 usermod -G docker ubuntu
@@ -142,4 +142,5 @@ sudo apt-get install \
     sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
 echo -e " ${BLUE} DOTNETCORE has been installed! \e[0m"
+
 
