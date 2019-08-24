@@ -17,22 +17,22 @@ NODEJS_VERSION=
 
 echo -e " ${BLUE} Updating Ubuntu Packages \[0m"
 sleep 1
-sudo apt-get update
+sudo apt-get update -y 
 
 echo -e " ${PURPLE} Install zip and unzip"
 sleep 1
-sudo apt-get install zip && sudo apt-get install unzip
+sudo apt-get install zip -y && sudo apt-get install unzip -y
 
 echo -e " ${PURPLE} Install Python and Pip"
 sleep 1
-sudo apt-get install python3 && sudo apt-get install python3-pip
+sudo apt-get install python3 -y && sudo apt-get install python3-pip -y
 echo -e " ${PURPLE} Python and Pip has been installed!"
 
 
 
 echo -e " ${BLUE} Installing AWS CLI"
 sleep 2
-pip3 install awscli --upgrade --user
+pip3 install awscli  --user
 echo -e " ${BLUE} AWS CLI has been installed! "
 
 
@@ -41,5 +41,5 @@ sleep 2
 cd /tmp && \
 wget https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip > terraform.zip && \
 unzip terraform.zip && \
-mv terraform /usr/bin  && cd 
+mv terraform /usr/bin && cd 
 echo -e " ${BLUE} Terraform has been installed! "
