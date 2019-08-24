@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     devpack.vm.box = "ubuntu/xenial64"
 
     # Network Settings
-    devpack.vm.synced_folder ".", "/home/vagrant"
+    # devpack.vm.synced_folder ".", "/home/vagrant"
 
 
     # Provider Settings
