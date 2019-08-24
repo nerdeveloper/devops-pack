@@ -8,11 +8,12 @@ PURPLE='\033[0;35m'
 TERRAFROM_VERSION=0.12.7
 KOPS_VERSION=1.13.0
 GO_VERSION=1.12.9
+NODEJS_VERSION='10.x'
 
 
 echo -e " ${BLUE} Updating Ubuntu Packages \[0m"
 sleep 1
-sudo apt-get update -y 
+sudo apt-get update -y
 
 echo -e " ${PURPLE} Installing zip and unzip"
 sleep 1
@@ -46,7 +47,7 @@ echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee 
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
 # Update the package list and install the Cloud SDK
-sudo apt-get update -y && sudo apt-get install google-cloud-sdk -y 
+sudo apt-get update -y && sudo apt-get install google-cloud-sdk -y
 
 echo -e " ${BLUE} Google Cloud CLI has been installed! \e[0m "
 
@@ -56,33 +57,33 @@ sleep 2
 
 # Get packages needed for the install process:
 sudo apt-get update -y
-sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg -y 
+sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg -y
 
 # Download and install the Microsoft signing key:
 curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
-    gpg --dearmor | \
-    sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+gpg --dearmor | \
+sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
 
 
 # Add the Azure CLI software repository
 AZ_REPO=$(lsb_release -cs)
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
-    sudo tee /etc/apt/sources.list.d/azure-cli.list
+sudo tee /etc/apt/sources.list.d/azure-cli.list
 
 # Update repository information and install the azure-cli package:
 sudo apt-get update
-sudo apt-get install azure-cli -y 
+sudo apt-get install azure-cli -y
 
 echo -e " ${BLUE} Microsoft Azure CLI has been installed! \e[0m "
 
 
-#Installations for Go 
+#Installations for Go
 echo -e " ${BLUE} Installing Go "
 sleep 2
 cd /tmp && \
 wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && \
 sudo tar -xvf go${GO_VERSION}.linux-amd64.tar.gz
-mv go /usr/bin 
+mv go /usr/bin
 echo -e " ${BLUE} Go has been installed! \e[0m"
 
 
@@ -92,17 +93,17 @@ sleep 2
 cd /tmp && \
 wget https://releases.hashicorp.com/terraform/${TERRAFROM_VERSION}/terraform_${TERRAFROM_VERSION}_linux_amd64.zip  && \
 unzip terraform_${TERRAFROM_VERSION}_linux_amd64.zip && \
-mv terraform /usr/bin 
+mv terraform /usr/bin
 echo -e " ${BLUE} Terraform has been installed! \e[0m"
 
 #Installations for Ansible
 echo -e " ${BLUE} Installing Ansible"
 sleep 2
 sudo apt-get update -y
-sudo apt-get install software-properties-common -y 
+sudo apt-get install software-properties-common -y
 sudo apt-add-repository ppa:ansible/ansible -y  && \
 sudo apt-get update -y && \
-sudo apt-get install ansible -y 
+sudo apt-get install ansible -y
 
 echo -e " ${BLUE} Ansible has been installed! \e[0m"
 
@@ -124,22 +125,22 @@ echo -e " ${BLUE} Installing DOCKER"
 sleep 2
 usermod -G docker ubuntu
 sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common -y
-    
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    
-    sudo apt-key fingerprint 0EBFCD88
-    
-    sudo add-apt-repository \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu
+apt-transport-https \
+ca-certificates \
+curl \
+gnupg-agent \
+software-properties-common -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository \
+"deb [arch=amd64] https://download.docker.com/linux/ubuntu
     $(lsb_release -cs) \
-    stable"
-    sudo apt-get update
-    sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
 echo -e " ${BLUE} Docker has been installed! \e[0m"
 
@@ -151,3 +152,10 @@ chmod +x kops-linux-amd64
 sudo mv ./kops-linux-amd64 /usr/bin/kops
 echo -e " ${BLUE} Kubernetes(Kops)has been installed! \e[0m"
 
+#Installations for Nodejs
+echo -e " ${BLUE} Installing Nodejs"
+sleep 2
+curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION} -o nodesource_setup.sh && \
+sudo bash nodesource_setup.sh && \
+sudo apt-get install nodejs -y
+echo -e " ${BLUE} Nodejs has been installed! \e[0m"
