@@ -80,16 +80,8 @@ echo -e " ${PURPLE} Python and Pip has been installed! \e[0m "
 #Installations for Go
 echo -e " ${BLUE} Installing Go "
 sleep 2
-cd /tmp && \
-wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && \
-sudo tar -xvf go${GO_VERSION}.linux-amd64.tar.gz
-sudo mv go/ /usr/local/go
-
-export GOROOT=/usr/local/go && \
-export GOPATH=$HOME/goprojects && \
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-source ./scripts/install.sh
-
+sudo apt-get update -y 
+apt-get install golang-go
 echo -e " ${BLUE} Go has been installed! \e[0m"
 
 
