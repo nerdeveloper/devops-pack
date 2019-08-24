@@ -9,8 +9,6 @@ TERRAFROM_VERSION=0.12.7
 DOCKER_VERSION=19.0.0
 KOPS_VERSION=2.0.1
 ANSIBLE_VERSION=5.x
-AZURE-CLI_VERSION=2.9.0
-GOOGLECLOUD-CLI_VERSION=2.x
 GO_VERSION=2.2
 ASPDOTNETCORE_VERSION=3.4
 
@@ -42,7 +40,7 @@ cd /tmp && \
 wget https://releases.hashicorp.com/terraform/${TERRAFROM_VERSION}/terraform_${TERRAFROM_VERSION}_linux_amd64.zip  && \
 unzip terraform_${TERRAFROM_VERSION}_linux_amd64.zip && \
 mv terraform /usr/bin 
-echo -e " ${BLUE} Terraform has been installed! \e[0m "
+echo -e " ${BLUE} Terraform has been installed! \e[0m"
 
 
 echo -e " ${BLUE} Installing Google Cloud CLI"
