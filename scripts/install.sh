@@ -58,7 +58,7 @@ echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee 
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
 # Update the package list and install the Cloud SDK
-sudo apt-get update && sudo apt-get install google-cloud-sdk
+sudo apt-get update -y && sudo apt-get install google-cloud-sdk -y 
 
 echo -e " ${BLUE} Google Cloud CLI has been installed! \e[0m "
 
@@ -83,6 +83,6 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO 
 
 # Update repository information and install the azure-cli package:
 sudo apt-get update
-sudo apt-get install azure-cli
+sudo apt-get install azure-cli -y 
 
 echo -e " ${BLUE} Microsoft Azure CLI has been installed! \e[0m "
