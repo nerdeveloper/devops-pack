@@ -80,8 +80,15 @@ echo -e " ${PURPLE} Python and Pip has been installed! \e[0m "
 #Installations for Go
 echo -e " ${BLUE} Installing Go "
 sleep 2
-sudo apt-get update -y 
-sudo apt-get install golang-go -y 
+cd /tmp && \
+wget https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && \
+sudo tar -xvf go${GO_VERSION}.linux-amd64.tar.gz
+sudo mv go/ /usr/local/go
+
+echo  GOROOT=/usr/local/go >> /home/vagrant/.bashrc && \
+echo  GOPATH=$HOME/goprojects >> /home/vagrant/.bashrc && \
+echo PATH=$GOPATH/bin:$GOROOT/bin:$PATH >> /home/vagrant/.bashrc
+
 echo -e " ${BLUE} Go has been installed! \e[0m"
 
 
