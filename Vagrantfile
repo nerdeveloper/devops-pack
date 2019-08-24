@@ -25,6 +25,6 @@ Vagrant.configure("2") do |config|
     end
 
     # Provision Settings
-    devpack.vm.provision "shell", path: "install.sh"
+    devpack.vm.provision "shell", path: "scripts/install.sh"
     end
   end
