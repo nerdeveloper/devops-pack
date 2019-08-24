@@ -100,7 +100,7 @@ sleep 2
 cd /tmp && \
 wget https://releases.hashicorp.com/terraform/${TERRAFROM_VERSION}/terraform_${TERRAFROM_VERSION}_linux_amd64.zip  && \
 unzip terraform_${TERRAFROM_VERSION}_linux_amd64.zip && \
-mv terraform /usr/bin
+mv terraform /usr/local/bin
 echo -e " ${BLUE} Terraform has been installed! \e[0m"
 
 #Installations for Ansible
@@ -156,7 +156,7 @@ echo -e " ${BLUE} Installing Kubernetes(Kops)"
 sleep 2
 curl -LO https://github.com/kubernetes/kops/releases/download/${KOPS_VERSION}/kops-linux-amd64
 chmod +x kops-linux-amd64
-sudo mv ./kops-linux-amd64 /usr/bin/kops
+sudo mv ./kops-linux-amd64 /usr/local/bin/kops
 echo -e " ${BLUE} Kubernetes(Kops)has been installed! \e[0m"
 
 #Installations for Nodejs
