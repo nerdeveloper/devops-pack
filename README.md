@@ -42,7 +42,6 @@ You can find [instructions on how to install `homebrew` here](https://www.howtog
 
 ## CLI(Screenshot)
 
-
 ### Make me feel :heart: and appreciated
 
 You can :star: the repo | Tell your friends about it | Fork it and submit Pull Request.
