@@ -4,6 +4,11 @@ RED='\033[0;31m'
 BLUE='\033[40;38;5;82m'
 PURPLE='\033[0;35m'
 
+echo "  _   _   _   _   _   _   _   _   _   _   _  
+ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ / \ 
+( D | e | v | O | p | s | - | p | a | c | k )
+ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ \_/ " 
+
 function createfile() {
     FILE=./scripts/install.sh.bak
     if [ ! -f "$FILE" ]; then
@@ -94,8 +99,8 @@ function ACTIONS {
 #Variables
 ERROR=" "
 
-# #Clear screen for menu
-# clear
+#Clear screen for menu
+#clear
 
 #Menu function
 function MENU {

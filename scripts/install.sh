@@ -195,4 +195,25 @@ echo -e " ${BLUE} Packer has been installed! \e[0m"
 }
 
 
-runAWS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
