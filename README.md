@@ -1,6 +1,6 @@
 # devops-pack
 
-## This is an All-in-one setup pack for Backend, Cloud, DevOps, etc related projects for development and testing. It can used on-prem and Bare metal Servers
+## This is an All-in-one setup pack  for development and testing. It can be used local development, on-prem and Bare metal Servers
 
 ### Requirements
 
@@ -22,7 +22,7 @@ Backend, Cloud, DevOps, related projects can be difficult to setup. Following a 
 - DotNetCore
 - Nodejs
 - Go
-- Python v3
+- Python v3[Installed by Default]
 - AWS CLI
 - Microsoft Azure CLI
 - Google Cloud SDK(CLI)
@@ -30,9 +30,9 @@ Backend, Cloud, DevOps, related projects can be difficult to setup. Following a 
 ## Installation and Usage
 
 ```bash
-git clone https://github.com/nerdeveloper/stacks.git
+git clone https://github.com/nerdeveloper/devops-pack.git
 cd stacks
-bash setup.sh
+bash devpack.sh  OR ./devpack.sh
 ```
 
 ## Instruction for Mac users
