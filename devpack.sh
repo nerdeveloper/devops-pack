@@ -5,12 +5,14 @@ BLUE='\033[40;38;5;82m'
 PURPLE='\033[0;35m'
 
 function createfile() {
-FILE=./scripts/install.sh.bak
-if [ ! -f "$FILE" ]; then
-     cp -r scripts/install.sh scripts/install.sh.bak
-   
-fi
+    FILE=./scripts/install.sh.bak
+    if [ ! -f "$FILE" ]; then
+        cp -r scripts/install.sh scripts/install.sh.bak
+        
+      
+    fi
 }
+ echo -e '\n' >> scripts/install.sh
 createfile
 
 #Menu options
@@ -19,13 +21,12 @@ options[1]="Kubernetes(Kops)"
 options[2]="Ansible"
 options[3]="Packer"
 options[4]="Terraform"
-options[5]="Terraform"
-options[6]="Terraform"
-options[7]="Terraform"
-options[8]="Terraform"
-options[9]="Terraform"
-options[10]="Terraform"
-options[11]="Terraform"
+options[5]="DotnetCore"
+options[6]="Nodejs"
+options[7]="Go"
+options[8]="AWS CLI"
+options[9]="Microsoft Azure CLI"
+options[10]="Google Cloud CLI(gcloud)"
 
 #Actions to take based on selection
 function ACTIONS {
@@ -33,7 +34,7 @@ function ACTIONS {
         #Option 1 selected
         echo "Option 1 selected which is Docker"
         echo 'runDocker' >> scripts/install.sh
-
+        
     fi
     if [[ ${choices[1]} ]]; then
         #Option 2 selected
@@ -43,54 +44,49 @@ function ACTIONS {
     if [[ ${choices[2]} ]]; then
         #Option 3 selected
         echo "Option 3 selected which is Ansible"
-         echo 'runAnsible' >> scripts/install.sh
+        echo 'runAnsible' >> scripts/install.sh
         
     fi
     if [[ ${choices[3]} ]]; then
         #Option 4 selected
-        echo "Option 4 selected which Packer"
-          echo 'runPacker' >> scripts/install.sh
-
+        echo "Option 4 selected which is Packer"
+        echo 'runPacker' >> scripts/install.sh
+        
     fi
     if [[ ${choices[4]} ]]; then
         #Option 5 selected
-        echo "Option 5 selected which Terraform"
-          echo 'runTerraform' >> scripts/install.sh
+        echo "Option 5 selected which is Terraform"
+        echo 'runTerraform' >> scripts/install.sh
     fi
     if [[ ${choices[5]} ]]; then
-        #Option 5 selected
-        echo "Option 5 selected which Terraform"
-          echo 'runTerraform' >> scripts/install.sh
+        #Option 6 selected
+        echo "Option 6 selected which is DotNetCore"
+        echo 'runTerraform' >> scripts/install.sh
     fi
     if [[ ${choices[6]} ]]; then
-        #Option 5 selected
-        echo "Option 5 selected which Terraform"
-          echo 'runTerraform' >> scripts/install.sh
+        #Option 7 selected
+        echo "Option 7 selected which is Nodejs"
+        echo 'runNode' >> scripts/install.sh
     fi
     if [[ ${choices[7]} ]]; then
-        #Option 5 selected
-        echo "Option 5 selected which Terraform"
-          echo 'runTerraform' >> scripts/install.sh
+        #Option 8 selected
+        echo "Option 8 selected which is Go"
+        echo 'runGo' >> scripts/install.sh
     fi
     if [[ ${choices[8]} ]]; then
-        #Option 5 selected
-        echo "Option 5 selected which Terraform"
-          echo 'runTerraform' >> scripts/install.sh
+        #Option 9 selected
+        echo "Option 9 selected which is AWS CLI"
+        echo 'runAWS' >> scripts/install.sh
     fi
     if [[ ${choices[9]} ]]; then
-        #Option 5 selected
-        echo "Option 5 selected which Terraform"
-          echo 'runTerraform' >> scripts/install.sh
+        #Option 10 selected
+        echo "Option 10 selected which Microsoft Azure CLI"
+        echo 'runAzure' >> scripts/install.sh
     fi
     if [[ ${choices[10]} ]]; then
-        #Option 5 selected
-        echo "Option 5 selected which Terraform"
-          echo 'runTerraform' >> scripts/install.sh
-    fi
-    if [[ ${choices[11]} ]]; then
-        #Option 5 selected
-        echo "Option 5 selected which Terraform"
-          echo 'runTerraform' >> scripts/install.sh
+        #Option 11 selected
+        echo "Option 11 selected which Google Cloud CLI(gloud)"
+        echo 'runGoogleCloud' >> scripts/install.sh
     fi
     
 }
@@ -111,7 +107,7 @@ function MENU {
 }
 
 #Menu loop
-while MENU && read -e -p "Select the desired options using their number (again to uncheck, ENTER when done): " -n1 SELECTION && [[ -n "$SELECTION" ]]; do
+while MENU && read -e -p "Select the desired options using their number (again to uncheck, ENTER when done): " -n2 SELECTION && [[ -n "$SELECTION" ]]; do
     clear
     if [[ "$SELECTION" == *[[:digit:]]* && $SELECTION -ge 1 && $SELECTION -le ${#options[@]} ]]; then
         (( SELECTION-- ))
@@ -120,7 +116,7 @@ while MENU && read -e -p "Select the desired options using their number (again t
         else
             choices[SELECTION]="+"
         fi
-            ERROR=" "
+        ERROR=" "
     else
         ERROR="Invalid option: $SELECTION"
     fi
@@ -131,9 +127,9 @@ ACTIONS
 sleep 1
 echo -e " ${BLUE} Please wait while we install you DevOps-Pack \e[0m"
 sleep 2
-vagrant up 
-rm scripts/install.sh
-mv scripts/install.sh.bak scripts/install.sh
+vagrant up
+# rm scripts/install.sh
+# mv scripts/install.sh.bak scripts/install.sh
 echo Done.
 sleep 1
 echo -e " ${PURPLE} Enter 'vagrant ssh' to login into your devops-pack"
