@@ -120,7 +120,7 @@ sudo apt-get install ansible -y
 echo -e " ${BLUE} Ansible has been installed! \e[0m"
 }
 
-function Dotnetcore() {
+function runDotnetcore() {
 #Installations for Dotnetcore
 echo -e " ${BLUE} Installing Dotnetcore"
 sleep 2

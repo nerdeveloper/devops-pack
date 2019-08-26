@@ -66,7 +66,7 @@ function ACTIONS {
     if [[ ${choices[5]} ]]; then
         #Option 6 selected
         echo "Option 6 selected which is DotNetCore"
-        echo 'runTerraform' >> scripts/install.sh
+        echo 'runDotnetcore' >> scripts/install.sh
     fi
     if [[ ${choices[6]} ]]; then
         #Option 7 selected
