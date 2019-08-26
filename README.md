@@ -42,6 +42,8 @@ You can find [instructions on how to install `homebrew` here](https://www.howtog
 
 ## CLI(Screenshot)
 
+  <img src="https://github.com/nerdeveloper/devops-pack/blob/master/images/shot.png" alt="Lighthouse perf" title="Screenshot of Stacks" width="500" >
+
 ### Make me feel :heart: and appreciated
 
 You can :star: the repo | Tell your friends about it | Fork it and submit Pull Request.
