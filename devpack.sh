@@ -138,11 +138,11 @@ done
 ACTIONS
 
 sleep 1
-echo -e " ${BLUE} Please wait while we install you DevOps-Pack \e[0m"
+echo -e " ${BLUE} Please wait while we install you DevOps-Pack"
 sleep 2
 vagrant up
-# rm scripts/install.sh
-# mv scripts/install.sh.bak scripts/install.sh
+rm scripts/install.sh
+mv scripts/install.sh.bak scripts/install.sh
 echo Done.
 sleep 1
 echo -e " ${PURPLE} Enter 'vagrant ssh' to login into your devops-pack"
