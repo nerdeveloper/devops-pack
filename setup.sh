@@ -18,29 +18,44 @@ checkOS () {
     esac
 }
 checkOS
-if [ "$machine" == "Mac" ]; then
-    echo -e "${PURPLE} Installing VirtualBox..."
-    sleep 1
-    brew cask install virtualbox
-    elif [ "$machine" == "Linux" ]; then
-    sleep 1
-    sudo apt-get update -y
-    sudo apt-get install virtualbox -y 
+if [ ! -x "$(command -v vagrant)" ]; then
+    
+    if [ "$machine" == "Mac" ]; then
+        echo -e "${PURPLE} Installing Vagrant..."
+        sleep 1
+        brew cask install vagrant
+        echo -e " ${PURPLE} Vagrant has been installed!"
+        elif [ "$machine" == "Linux" ]; then
+        sleep 1
+        sudo apt-get update -y
+        sudo apt-get install vagrant -y
+        echo -e " ${PURPLE} Vagrant has been installed! \e[0m "
+        
+    else
+        echo -e " ${PURPLE} Vagrant has been installed already!"
+    fi
+    
+    elif [ ! -x "$(command -v virtualbox)" ]; then
+    if [ "$machine" == "Mac" ]; then
+        echo -e "${PURPLE} Installing VirtualBox..."
+        sleep 1
+        brew cask install virtualbox
+        echo -e " ${PURPLE} Virtualbox has been installed!"
+        elif [ "$machine" == "Linux" ]; then
+        sleep 1
+        sudo apt-get update -y
+        sudo apt-get install virtualbox -y
+        echo -e " ${PURPLE} Virtualbox has been installed! \e[0m "
+    else
+        echo -e " ${PURPLE} Vagrant has been installed already!"
+    fi
 else
-    echo "VirtualBox has no support for your Operating System."
+    echo -e " ${BLUE} Your machine has meet the requirements to install DevOps-pack."
 fi
 
-if [ "$machine" == "Mac" ]; then
-    echo -e "${PURPLE} Installing Vagrant..."
-    sleep 1
-    brew cask install vagrant
-    elif [ "$machine" == "Linux" ]; then
-    sleep 1
-    sudo apt-get update -y
-    sudo apt-get install vagrant -y 
-else
-    echo "VirtualBox has no support for your Operating System."
-fi
+
+
+
 
 
 
