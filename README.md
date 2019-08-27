@@ -8,6 +8,7 @@ Backend, Cloud, DevOps, related projects can be difficult to setup, following a 
 
 ## Tools inside Devops-pack
 
+- Git [Installed by Default]
 - Docker
 - Kubernetes(Kops)
 - Ansible
@@ -16,7 +17,7 @@ Backend, Cloud, DevOps, related projects can be difficult to setup, following a 
 - DotNetCore
 - Nodejs
 - Go
-- Python v3[Installed by Default]
+- Python v3 [Installed by Default]
 - AWS CLI
 - Microsoft Azure CLI
 - Google Cloud SDK(CLI)

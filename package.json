@@ -1,14 +1,14 @@
 {
   "name": "devops-pack",
   "version": "1.0.0",
-  "description": "An All-in-one setup pack for Backend, Cloud, etc related projects for development and testing. ",
-  "main": "index.js",
+  "description": "An All-in-one starter pack for Backend, Cloud, etc related projects for development and testing. ",
+  "main": "devpack.sh",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Obinna Odirionye",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "cz-conventional-changelog": "^3.0.2"
   },
