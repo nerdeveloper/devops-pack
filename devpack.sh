@@ -73,7 +73,7 @@ function ACTIONS {
     if [[ ${choices[5]} ]]; then
         #Option 6 selected
         echo "Option 6 selected which is DotNetCore"
-        echo -e '\nrunDotnetcore' >> scripts/install.sh
+        echo -e '\nrunDotNetCore' >> scripts/install.sh
     fi
     if [[ ${choices[6]} ]]; then
         #Option 7 selected
