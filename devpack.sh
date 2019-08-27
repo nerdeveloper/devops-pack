@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 RED='\033[0;31m'
 BLUE='\033[40;38;5;82m'
@@ -137,11 +138,24 @@ ACTIONS
 sleep 1
 echo -e " ${BLUE} Please wait while we install your DevOps-Pack"
 sleep 2
-vagrant up
-rm scripts/install.sh
-mv scripts/install.sh.bak scripts/install.sh
-echo Done.
-sleep 1
-echo -e " ${PURPLE} Enter 'vagrant ssh' to login into your devops-pack"
-echo -e " ${PURPLE} Enter 'vagrant destroy -f ' to delete into your devops-pack"
-echo -e " ${PURPLE} Tweet me @_nerdeveloper."
+if vagrant up; then
+    rm scripts/install.sh
+    mv scripts/install.sh.bak scripts/install.sh
+    echo Done.
+    sleep 1
+    (exit 1)
+    echo -e " ${PURPLE} Enter 'vagrant ssh' to login into your devops-pack"
+    echo -e " ${PURPLE} Enter 'vagrant destroy -f ' to delete into your devops-pack"
+    echo -e " ${PURPLE} Tweet me @_nerdeveloper."
+else
+    rm scripts/install.sh
+    mv scripts/install.sh.bak scripts/install.sh
+fi
+# rm scripts/install.sh
+# mv scripts/install.sh.bak scripts/install.sh
+# echo Done.
+# sleep 1
+# (exit 1)
+# echo -e " ${PURPLE} Enter 'vagrant ssh' to login into your devops-pack"
+# echo -e " ${PURPLE} Enter 'vagrant destroy -f ' to delete into your devops-pack"
+# echo -e " ${PURPLE} Tweet me @_nerdeveloper."
