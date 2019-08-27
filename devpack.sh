@@ -9,16 +9,19 @@ echo "
 |D|e|v|O|p|s|-|p|a|c|k|
 +-+-+-+-+-+-+-+-+-+-+-+
 "
-if [ ! -x "$(command -v vagrant)" ]; then
-    echo -e " ${RED} Please, install Vagrant on this machine! Run *bash setup.sh* "
-    exit 0
-fi
-
-if [ ! -x "$(command -v virtualbox)" ]; then
-    echo -e " ${RED} Please, install Virtualbox on this machine! Run *bash setup.sh* "
-    exit 0
+if [ ! -x "$(command -v vagrant)" ] && [! -x "$(command -v virtualbox)" ] ; then
+    if [ "$machine" == "Mac" ]; then
+        echo -e " ${RED} Error: Your machine does not have the requirements to run DevOps-pack. Run *bash setup.sh* "
+        exit 0
+    elif [ "$machine" == "Linux" ];
+    then
+        echo -e " ${RED} Error: Your machine does not have the requirements to run DevOps-pack. Run *bash setup.sh* "
+        exit 0
+    fi
+    
     
 fi
+
 
 function createfile() {
     FILE=./scripts/install.sh.bak

@@ -193,3 +193,4 @@ sudo mv packer /usr/local/bin
 echo -e " ${BLUE} Packer has been installed! \e[0m"
 
 }
+
