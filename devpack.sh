@@ -10,12 +10,12 @@ echo "
 +-+-+-+-+-+-+-+-+-+-+-+
 "
 if [ ! -x "$(command -v vagrant)" ]; then
-exit 0
 echo -e 'Please, install Vagrant on this machine! Run *bash setup.sh* '
+exit 0
 
 elif [ ! -x "$(command -v virtualbox)" ]; then
-    exit 0
 echo -e 'Please, install Vagrant on this machine! Run *bash setup.sh*'
+exit 0
 else
     echo "DevOps-pack has no support for your Operating System."
 fi

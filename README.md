@@ -25,7 +25,7 @@ Backend, Cloud, DevOps, related projects can be difficult to setup, following a 
 
 ```bash
 git clone https://github.com/nerdeveloper/devops-pack.git
-cd stacks
+cd devops-pack
 bash devpack.sh  OR ./devpack.sh
 ```
 
