@@ -15,12 +15,7 @@ PACKER_VERSION=1.4.3
 echo -e " ${BLUE} Updating Ubuntu Packages \e[0m "
 sleep 1
 sudo apt-get update -y
-
-echo -e " ${PURPLE} Installing zip and unzip \[0m  "
-sleep 1
 sudo apt-get install zip -y && sudo apt-get install unzip -y
-echo -e " ${PURPLE}  zip and unzip has been installed!"
-
 
 function runAWS() {
 # Installation for AWS CLI

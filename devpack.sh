@@ -143,19 +143,12 @@ if vagrant up; then
     mv scripts/install.sh.bak scripts/install.sh
     echo Done.
     sleep 1
-    (exit 1)
     echo -e " ${PURPLE} Enter 'vagrant ssh' to login into your devops-pack"
     echo -e " ${PURPLE} Enter 'vagrant destroy -f ' to delete into your devops-pack"
     echo -e " ${PURPLE} Tweet me @_nerdeveloper."
 else
     rm scripts/install.sh
     mv scripts/install.sh.bak scripts/install.sh
+    vagrant destroy -f 
 fi
-# rm scripts/install.sh
-# mv scripts/install.sh.bak scripts/install.sh
-# echo Done.
-# sleep 1
-# (exit 1)
-# echo -e " ${PURPLE} Enter 'vagrant ssh' to login into your devops-pack"
-# echo -e " ${PURPLE} Enter 'vagrant destroy -f ' to delete into your devops-pack"
-# echo -e " ${PURPLE} Tweet me @_nerdeveloper."
+
