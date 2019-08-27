@@ -10,13 +10,14 @@ echo "
 +-+-+-+-+-+-+-+-+-+-+-+
 "
 if [ ! -x "$(command -v vagrant)" ]; then
-echo -e " ${RED} Please, install Vagrant on this machine! Run *bash setup.sh* "
-exit 0
+    echo -e " ${RED} Please, install Vagrant on this machine! Run *bash setup.sh* "
+    exit 0
+fi
 
-elif [ ! -x "$(command -v virtualbox)" ]; then
-echo -e " ${RED} Please, install Virtualbox on this machine! Run *bash setup.sh* "
-exit 0
-
+if [ ! -x "$(command -v virtualbox)" ]; then
+    echo -e " ${RED} Please, install Virtualbox on this machine! Run *bash setup.sh* "
+    exit 0
+    
 fi
 
 function createfile() {
