@@ -9,18 +9,11 @@ echo "
 |D|e|v|O|p|s|-|p|a|c|k|
 +-+-+-+-+-+-+-+-+-+-+-+
 "
-if [ ! -x "$(command -v vagrant)" ] && [ ! -x "$(command -v virtualbox)" ] ; then
-    if [ "$machine" == "Mac" ]; then
-        echo -e " ${RED} Error: Your machine does not have the requirements to run DevOps-pack. Run *bash setup.sh* "
-        exit 0
-    elif [ "$machine" == "Linux" ];
-    then
-        echo -e " ${RED} Error: Your machine does not have the requirements to run DevOps-pack. Run *bash setup.sh* "
-        exit 0
-    fi
-    
-    
+if [ ! -x "$(command -v vagrant)" ] && [ ! -x "$(command -v virtualbox)" ]; then
+    echo -e " ${RED} Error: Your machine does not have the requirements to run DevOps-pack. Run *bash setup.sh* "
+    exit 0
 fi
+
 
 
 function createfile() {
@@ -32,7 +25,6 @@ function createfile() {
     fi
 }
 createfile
-echo -e '\n' >> scripts/install.sh
 
 #Menu options
 options[0]="Docker"
@@ -52,60 +44,60 @@ function ACTIONS {
     if [[ ${choices[0]} ]]; then
         #Option 1 selected
         echo "Option 1 selected which is Docker"
-        echo 'runDocker' >> scripts/install.sh
+        echo -e '\nrunDocker' >> scripts/install.sh
         
     fi
     if [[ ${choices[1]} ]]; then
         #Option 2 selected
         echo "Option 2 selected which is Kubernetes(Kops)"
-        echo 'runKops' >> scripts/install.sh
+        echo -e  '\nrunKops' >> scripts/install.sh
     fi
     if [[ ${choices[2]} ]]; then
         #Option 3 selected
         echo "Option 3 selected which is Ansible"
-        echo 'runAnsible' >> scripts/install.sh
+        echo -e '\nrunAnsible' >> scripts/install.sh
         
     fi
     if [[ ${choices[3]} ]]; then
         #Option 4 selected
         echo "Option 4 selected which is Packer"
-        echo 'runPacker' >> scripts/install.sh
+        echo -e '\nrunPacker' >> scripts/install.sh
         
     fi
     if [[ ${choices[4]} ]]; then
         #Option 5 selected
         echo "Option 5 selected which is Terraform"
-        echo 'runTerraform' >> scripts/install.sh
+        echo -e '\nrunTerraform' >> scripts/install.sh
     fi
     if [[ ${choices[5]} ]]; then
         #Option 6 selected
         echo "Option 6 selected which is DotNetCore"
-        echo 'runDotnetcore' >> scripts/install.sh
+        echo -e '\nrunDotnetcore' >> scripts/install.sh
     fi
     if [[ ${choices[6]} ]]; then
         #Option 7 selected
         echo "Option 7 selected which is Nodejs"
-        echo 'runNode' >> scripts/install.sh
+        echo -e '\nrunNode' >> scripts/install.sh
     fi
     if [[ ${choices[7]} ]]; then
         #Option 8 selected
         echo "Option 8 selected which is Go"
-        echo 'runGo' >> scripts/install.sh
+        echo -e '\nrunGo' >> scripts/install.sh
     fi
     if [[ ${choices[8]} ]]; then
         #Option 9 selected
         echo "Option 9 selected which is AWS CLI"
-        echo 'runAWS' >> scripts/install.sh
+        echo -e '\nrunAWS' >> scripts/install.sh
     fi
     if [[ ${choices[9]} ]]; then
         #Option 10 selected
         echo "Option 10 selected which Microsoft Azure CLI"
-        echo 'runAzure' >> scripts/install.sh
+        echo -e '\nrunAzure' >> scripts/install.sh
     fi
     if [[ ${choices[10]} ]]; then
         #Option 11 selected
         echo "Option 11 selected which Google Cloud CLI(gloud)"
-        echo 'runGoogleCloud' >> scripts/install.sh
+        echo -e '\nrunGoogleCloud' >> scripts/install.sh
     fi
     
 }
@@ -137,6 +129,8 @@ while MENU && read -e -p "Select the desired options using their number (again t
         ERROR="Invalid option: $SELECTION"
     fi
 done
+
+
 
 ACTIONS
 
