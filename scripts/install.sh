@@ -120,7 +120,7 @@ sudo apt-get install ansible -y
 echo -e " ${BLUE} Ansible has been installed! \e[0m"
 }
 
-function runDotnetcore() {
+function Dotnetcore() {
 #Installations for Dotnetcore
 echo -e " ${BLUE} Installing Dotnetcore"
 sleep 2
@@ -193,4 +193,3 @@ sudo mv packer /usr/local/bin
 echo -e " ${BLUE} Packer has been installed! \e[0m"
 
 }
-
