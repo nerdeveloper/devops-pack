@@ -1,6 +1,6 @@
 {
   "name": "devops-pack",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "An All-in-one setup pack for Backend, Cloud, etc related projects for development and testing. ",
   "main": "index.js",
   "scripts": {
