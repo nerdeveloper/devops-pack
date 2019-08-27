@@ -17,7 +17,7 @@ elif [ ! -x "$(command -v virtualbox)" ]; then
     exit 0
 echo -e 'Please, install Vagrant on this machine! Run *bash setup.sh*'
 else
-    echo "VirtualBox has no support for your Operating System."
+    echo "DevOps-pack has no support for your Operating System."
 fi
 
 function createfile() {
