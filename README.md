@@ -1,6 +1,6 @@
 # DevOps-pack
 
-## This is an interactive CLI with an All-in-one setup pack that helps you provision your local machine, on-prem, and bare metal servers with your favorite development and testing tools
+## This is an interactive CLI with an All-in-one setup pack that helps you provision your local machine, on-prem, and bare metal servers with your favourite development and testing tools
 
 ### Problem
 
@@ -42,7 +42,7 @@ You can find [instructions on how to install `homebrew` here](https://www.howtog
 
 ### How do I install the Requirements
 
-```bash 
+```bash
 bash setup.sh
 ```
 
