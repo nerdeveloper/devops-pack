@@ -9,6 +9,17 @@ echo "
 |D|e|v|O|p|s|-|p|a|c|k|
 +-+-+-+-+-+-+-+-+-+-+-+
 "
+if [ ! -x "$(command -v vagrant)" ]; then
+exit 0
+echo -e 'Please, install Vagrant on this machine! Run *bash setup.sh* '
+
+elif [ ! -x "$(command -v virtualbox)" ]; then
+    exit 0
+echo -e 'Please, install Vagrant on this machine! Run *bash setup.sh*'
+else
+    echo "VirtualBox has no support for your Operating System."
+fi
+
 function createfile() {
     FILE=./scripts/install.sh.bak
     if [ ! -f "$FILE" ]; then
