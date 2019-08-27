@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
     # boxes at https://vagrantcloud.com/search.
     devpack.vm.box = "ubuntu/xenial64"
 
+    devpack.vm.synced_folder '/host/path', '/guest/path', SharedFoldersEnableSymlinksCreate: false
+
     # Provider Settings
     devpack.vm.provider "virtualbox" do |vb|
       vb.memory = "512"
