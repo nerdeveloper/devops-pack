@@ -54,7 +54,13 @@ then
         echo -e " ${PURPLE} Vagrant has been installed already!"
     fi
 else
-    echo -e " ${BLUE} Your machine has meet the requirements to install DevOps-pack."
+    if [ "$machine" == "Mac" ]; then
+        echo -e " ${BLUE} Your machine has meet the requirements to install DevOps-pack."
+    elif [ "$machine" == "Linux" ];
+    then
+        echo -e " ${BLUE} Your machine has meet the requirements to install DevOps-pack. \e[0m "
+    fi
+    
 fi
 
 
