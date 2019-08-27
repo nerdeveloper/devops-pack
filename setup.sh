@@ -35,8 +35,9 @@ if [ ! -x "$(command -v vagrant)" ]; then
     else
         echo -e " ${PURPLE} Vagrant has been installed already!"
     fi
-    
-elif [ ! -x "$(command -v virtualbox)" ];
+fi
+
+if [ ! -x "$(command -v virtualbox)" ];
 then
     
     if [ "$machine" == "Mac" ]; then
@@ -53,12 +54,14 @@ then
     else
         echo -e " ${PURPLE} Vagrant has been installed already!"
     fi
-else
+fi
+
+if [ -x "$(command -v vagrant)" ] && [ -x "$(command -v virtualbox)" ]; then
     if [ "$machine" == "Mac" ]; then
-        echo -e " ${BLUE} Your machine has meet the requirements to install DevOps-pack."
+        echo -e " ${BLUE} Your machine has meet the requirements to install DevOps-pack. Run *bash devpack.sh* "
     elif [ "$machine" == "Linux" ];
     then
-        echo -e " ${BLUE} Your machine has meet the requirements to install DevOps-pack. \e[0m "
+        echo -e " ${BLUE} Your machine has meet the requirements to install DevOps-pack. Run *bash devpack.sh*  \e[0m "
     fi
     
 fi
