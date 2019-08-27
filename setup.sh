@@ -26,6 +26,7 @@ if [ ! -x "$(command -v vagrant)" ]; then
         brew cask install vagrant
         echo -e " ${PURPLE} Vagrant has been installed!"
         elif [ "$machine" == "Linux" ]; then
+        echo -e "${PURPLE} Installing Vagrant... \e[0m "
         sleep 1
         sudo apt-get update -y
         sudo apt-get install vagrant -y
@@ -35,13 +36,16 @@ if [ ! -x "$(command -v vagrant)" ]; then
         echo -e " ${PURPLE} Vagrant has been installed already!"
     fi
     
-    elif [ ! -x "$(command -v virtualbox)" ]; then
+elif [ ! -x "$(command -v virtualbox)" ];
+then
+    
     if [ "$machine" == "Mac" ]; then
         echo -e "${PURPLE} Installing VirtualBox..."
         sleep 1
         brew cask install virtualbox
         echo -e " ${PURPLE} Virtualbox has been installed!"
         elif [ "$machine" == "Linux" ]; then
+        echo -e "${PURPLE} Installing VirtualBox... \e[0m"
         sleep 1
         sudo apt-get update -y
         sudo apt-get install virtualbox -y
