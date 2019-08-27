@@ -1,6 +1,6 @@
 # DevOps-pack
 
-## This is an interactive CLI with an All-in-one setup pack for development and testing. It can be used local development, on-prem and Bare metal Servers. You can also multi-select your tools before installing them
+## This is an interactive CLI with an All-in-one setup pack that helps you provision your local machine, on-prem, and bare metal servers with your favorite development and testing tools
 
 ### Problem
 
@@ -26,7 +26,7 @@ Backend, Cloud, DevOps, related projects can be difficult to setup, following a 
 ```bash
 git clone https://github.com/nerdeveloper/devops-pack.git
 cd devops-pack
-bash devpack.sh  OR ./devpack.sh
+bash devpack.sh
 ```
 
 ## Instruction for Mac users
