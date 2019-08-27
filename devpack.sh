@@ -10,14 +10,13 @@ echo "
 +-+-+-+-+-+-+-+-+-+-+-+
 "
 if [ ! -x "$(command -v vagrant)" ]; then
-echo -e 'Please, install Vagrant on this machine! Run *bash setup.sh* '
+echo -e " ${RED} Please, install Vagrant on this machine! Run *bash setup.sh* "
 exit 0
 
 elif [ ! -x "$(command -v virtualbox)" ]; then
-echo -e 'Please, install Vagrant on this machine! Run *bash setup.sh*'
+echo -e " ${RED} Please, install Virtualbox on this machine! Run *bash setup.sh* "
 exit 0
-else
-    echo "DevOps-pack has no support for your Operating System."
+
 fi
 
 function createfile() {
@@ -28,8 +27,8 @@ function createfile() {
         
     fi
 }
-echo -e '\n' >> scripts/install.sh
 createfile
+echo -e '\n' >> scripts/install.sh
 
 #Menu options
 options[0]="Docker"
