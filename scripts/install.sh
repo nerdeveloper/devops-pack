@@ -12,6 +12,7 @@ NODEJS_VERSION='10.x'
 PACKER_VERSION=1.4.3
 
 
+
 echo -e " ${BLUE} Updating Ubuntu Packages \e[0m "
 sleep 1
 sudo apt-get update -y
@@ -157,12 +158,20 @@ echo -e " ${BLUE} Docker has been installed! \e[0m"
 
 function runKops() {
 #Installations for Kubernetes(Kops)
-echo -e " ${BLUE} Installing Kubernetes(Kops)"
+echo -e " ${BLUE} Installing Kubernetes(Kops) and Kubectl"
 sleep 2
 curl -LO https://github.com/kubernetes/kops/releases/download/${KOPS_VERSION}/kops-linux-amd64
 chmod +x kops-linux-amd64
 sudo mv ./kops-linux-amd64 /usr/local/bin/kops
 echo -e " ${BLUE} Kubernetes(Kops)has been installed! \e[0m"
+
+echo -e " ${BLUE} Installing Kubectl"
+sleep 2
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KOPS_VERSION}/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+echo -e " ${BLUE} Kubectl has been installed! \e[0m"
+
 }
 
 function runNode() {
