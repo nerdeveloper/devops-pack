@@ -29,7 +29,7 @@ createfile
 
 #Menu options
 options[0]="Docker"
-options[1]="Kubernetes(Kops)"
+options[1]="Kubernetes(Kops) and Kubectl"
 options[2]="Ansible"
 options[3]="Packer"
 options[4]="Terraform"
@@ -50,7 +50,7 @@ function ACTIONS {
     fi
     if [[ ${choices[1]} ]]; then
         #Option 2 selected
-        echo "Option 2 selected which is Kubernetes(Kops)"
+        echo "Option 2 selected which is Kubernetes(Kops) and Kubectl"
         echo -e  '\nrunKops' >> scripts/install.sh
     fi
     if [[ ${choices[2]} ]]; then
