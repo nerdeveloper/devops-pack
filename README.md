@@ -10,7 +10,7 @@ Backend, Cloud, DevOps, related projects can be difficult to setup, following a 
 
 - Git [Installed by Default]
 - Docker
-- Kubernetes(Kops)
+- Kubernetes(Kops) and Kubectl
 - Ansible
 - Packer
 - Terraform
