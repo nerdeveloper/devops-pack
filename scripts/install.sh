@@ -168,7 +168,7 @@ echo -e " ${BLUE} Kubernetes(Kops)has been installed! \e[0m"
 
 echo -e " ${BLUE} Installing Kubectl"
 sleep 2
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION`}/bin/linux/amd64/kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 echo -e " ${BLUE} Kubectl has been installed! \e[0m"
