@@ -1,6 +1,6 @@
 {
   "name": "devops-pack",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "An All-in-one starter pack for Backend, Cloud, etc related projects for development and testing. ",
   "main": "devpack.sh",
   "scripts": {
