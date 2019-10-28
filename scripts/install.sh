@@ -6,7 +6,8 @@ PURPLE='\033[0;35m'
 
 #version
 TERRAFROM_VERSION=0.12.7
-KOPS_VERSION=1.16.0
+KOPS_VERSION=1.13.0
+KUBECTL_VERSION=1.16.0
 GO_VERSION=1.12.9
 NODEJS_VERSION='10.x'
 PACKER_VERSION=1.4.3
@@ -167,7 +168,7 @@ echo -e " ${BLUE} Kubernetes(Kops)has been installed! \e[0m"
 
 echo -e " ${BLUE} Installing Kubectl"
 sleep 2
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KOPS_VERSION}/bin/linux/amd64/kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION`}/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 echo -e " ${BLUE} Kubectl has been installed! \e[0m"
